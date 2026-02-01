@@ -43,4 +43,13 @@ def audit_seo(url):
         elif len(h1_tags) == 0:
             print("❌ H1 LIPSA! (Google nu înțelege despre ce e pagina)")
         else:
-            print(f"⚠️ ATENȚIE:
+            print(f"⚠️ ATENȚIE: Am găsit {len(h1_tags)} tag-uri H1. Ar trebui să fie doar unul.")
+
+    except Exception as e:
+        print(f"❌ A apărut o eroare neașteptată: {e}")
+
+# --- ZONA DE TESTARE ---
+if __name__ == "__main__":
+    # Poți schimba link-ul de aici cu orice site vrei să verifici
+    site_de_test = "http://books.toscrape.com/"
+    audit_seo(site_de_test)
